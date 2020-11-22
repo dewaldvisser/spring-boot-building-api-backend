@@ -1,6 +1,6 @@
 package com.example.copsboot.user.web;
 
-import com.example.copsboot.infrastructure.security.ApplicationUserDetails;
+import com.example.copsboot.security.ApplicationUserDetails;
 import com.example.copsboot.user.User;
 import com.example.copsboot.user.UserNotFoundException;
 import com.example.copsboot.user.UserService;

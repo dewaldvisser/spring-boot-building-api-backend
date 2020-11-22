@@ -1,4 +1,4 @@
-package com.example.copsboot.infrastructure.security;
+package com.example.copsboot.security;
 
 import org.springframework.boot.json.JacksonJsonParser;
 import org.springframework.test.web.servlet.MockMvc;

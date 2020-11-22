@@ -1,4 +1,4 @@
-package com.example.copsboot.infrastructure.security;
+package com.example.copsboot.security;
 
 import io.restassured.specification.RequestSpecification;
 import org.springframework.security.oauth2.client.OAuth2RestTemplate;

@@ -1,4 +1,4 @@
-package com.example.copsboot.infrastructure.security;
+package com.example.copsboot.security;
 
 import com.example.copsboot.user.Users;
 import org.springframework.security.core.userdetails.UserDetails;

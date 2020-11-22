@@ -1,7 +1,7 @@
 package com.example.copsboot.report.web;
 
 import com.example.copsboot.infrastructure.SpringProfiles;
-import com.example.copsboot.infrastructure.security.SecurityHelperForRestAssured;
+import com.example.copsboot.security.SecurityHelperForRestAssured;
 import com.example.copsboot.user.UserService;
 import com.example.copsboot.user.Users;
 import io.restassured.RestAssured;

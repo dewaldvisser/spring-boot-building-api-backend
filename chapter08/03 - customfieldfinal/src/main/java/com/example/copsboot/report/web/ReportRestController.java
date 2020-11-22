@@ -1,6 +1,6 @@
 package com.example.copsboot.report.web;
 
-import com.example.copsboot.infrastructure.security.ApplicationUserDetails;
+import com.example.copsboot.security.ApplicationUserDetails;
 import com.example.copsboot.report.Report;
 import com.example.copsboot.report.ReportService;
 import org.springframework.http.HttpStatus;

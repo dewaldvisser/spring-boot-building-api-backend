@@ -17,7 +17,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.time.ZonedDateTime;
 import java.util.UUID;
 
-import static com.example.copsboot.infrastructure.security.SecurityHelperForMockMvc.*;
+import static com.example.copsboot.security.SecurityHelperForMockMvc.*;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.when;

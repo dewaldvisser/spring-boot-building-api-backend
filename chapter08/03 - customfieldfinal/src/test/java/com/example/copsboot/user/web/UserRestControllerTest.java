@@ -15,7 +15,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.Optional;
 
-import static com.example.copsboot.infrastructure.security.SecurityHelperForMockMvc.*;
+import static com.example.copsboot.security.SecurityHelperForMockMvc.*;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;

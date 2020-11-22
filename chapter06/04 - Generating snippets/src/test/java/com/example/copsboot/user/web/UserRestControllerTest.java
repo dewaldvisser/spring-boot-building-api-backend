@@ -1,9 +1,9 @@
 package com.example.copsboot.user.web;
 
 import com.example.copsboot.infrastructure.SpringProfiles;
-import com.example.copsboot.infrastructure.security.OAuth2ServerConfiguration;
-import com.example.copsboot.infrastructure.security.SecurityConfiguration;
-import com.example.copsboot.infrastructure.security.StubUserDetailsService;
+import com.example.copsboot.security.OAuth2ServerConfiguration;
+import com.example.copsboot.security.SecurityConfiguration;
+import com.example.copsboot.security.StubUserDetailsService;
 import com.example.copsboot.user.UserService;
 import com.example.copsboot.user.Users;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -25,7 +25,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.Optional;
 
-import static com.example.copsboot.infrastructure.security.SecurityHelperForMockMvc.*;
+import static com.example.copsboot.security.SecurityHelperForMockMvc.*;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;

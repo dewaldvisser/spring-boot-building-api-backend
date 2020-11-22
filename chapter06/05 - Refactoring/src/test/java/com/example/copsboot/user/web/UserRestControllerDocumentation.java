@@ -20,7 +20,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 import java.util.Optional;
 
-import static com.example.copsboot.infrastructure.security.SecurityHelperForMockMvc.*;
+import static com.example.copsboot.security.SecurityHelperForMockMvc.*;
 import static org.mockito.Mockito.when;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.documentationConfiguration;

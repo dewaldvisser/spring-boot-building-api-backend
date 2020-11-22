@@ -1,4 +1,4 @@
-package com.example.copsboot.infrastructure.security;
+package com.example.copsboot.security;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

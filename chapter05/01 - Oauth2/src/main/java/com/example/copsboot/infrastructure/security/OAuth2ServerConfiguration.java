@@ -1,4 +1,4 @@
-package com.example.copsboot.infrastructure.security;
+package com.example.copsboot.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

@@ -1,4 +1,4 @@
-package com.example.copsboot.infrastructure.security;
+package com.example.copsboot.security;
 
 import com.example.copsboot.infrastructure.SpringProfiles;
 import com.example.copsboot.user.UserService;
