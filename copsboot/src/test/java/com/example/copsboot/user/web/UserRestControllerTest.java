@@ -1,5 +1,6 @@
 package com.example.copsboot.user.web;
 
+import com.example.copsboot.infrastructure.CopsbootControllerTest;
 import com.example.copsboot.infrastructure.SpringProfiles;
 import com.example.copsboot.security.OAuth2ServerConfiguration;
 import com.example.copsboot.security.SecurityConfiguration;
@@ -36,8 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 //tag::webmvctest[]
 @RunWith(SpringRunner.class) //<1>
-@WebMvcTest(UserRestController.class) //<2>
-@ActiveProfiles(SpringProfiles.TEST) //<3>
+@CopsbootControllerTest(UserRestController.class)
 public class UserRestControllerTest {
 
     @Autowired

@@ -1,5 +1,6 @@
 package com.example.copsboot.user.web;
 
+import com.example.copsboot.infrastructure.CopsbootControllerTest;
 import com.example.copsboot.infrastructure.SpringProfiles;
 import com.example.copsboot.security.OAuth2ServerConfiguration;
 import com.example.copsboot.security.SecurityConfiguration;
@@ -43,8 +44,7 @@ import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.docu
 import static org.springframework.restdocs.operation.preprocess.Preprocessors.*;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(UserRestController.class)
-@ActiveProfiles(SpringProfiles.TEST)
+@CopsbootControllerTest(UserRestController.class)
 public class UserRestControllerDocumentation {
     @Rule
     public final JUnitRestDocumentation restDocumentation = new JUnitRestDocumentation("target/generated-snippets");
