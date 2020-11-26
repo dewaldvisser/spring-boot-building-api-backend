@@ -17,3 +17,7 @@ target/
 .mvn/
 mvnw
 mvnw.cmd
+
+### local properties and files contains personal setup and password
+/src/main/resources/application-local.properties
+create.sql
