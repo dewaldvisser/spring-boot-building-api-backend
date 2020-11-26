@@ -7,7 +7,6 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Set;
 
-
 @Entity
 @Table(name = "copsboot_user")
 public class User extends AbstractEntity<UserId> {

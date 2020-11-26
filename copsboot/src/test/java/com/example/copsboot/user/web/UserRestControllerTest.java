@@ -28,10 +28,10 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.util.Optional;
 
 import static com.example.copsboot.security.SecurityHelperForMockMvc.*;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -116,22 +116,40 @@ public class UserRestControllerTest {
 
         verify(service).createOfficer(email, password); //<7>
     }
-    //end::test-create-officer[]
 
-    //tag::testconfig[]
-    @TestConfiguration //<1>
-    @Import(OAuth2ServerConfiguration.class) //<2>
-    static class TestConfig {
-        @Bean
-        public UserDetailsService userDetailsService() {
-            return new StubUserDetailsService(); //<3>
-        }
+    @Test
+    public void testCreateOfficerIfPasswordIsTooShort() throws Exception {
+        String email = "wim.deblauwe@example.com";
+        String password = "pwd";
 
-        @Bean
-        public SecurityConfiguration securityConfiguration() {
-            return new SecurityConfiguration(); //<5>
-        }
+        CreateOfficerParameters parameters = new CreateOfficerParameters();
+        parameters.setEmail(email);
+        parameters.setPassword(password);
 
+        mvc.perform(post("/api/users")
+                .contentType(MediaType.APPLICATION_JSON_UTF8)
+                .content(objectMapper.writeValueAsString(parameters)))
+                .andExpect(status().isBadRequest())
+                .andDo(print());
+
+        verify(service, never()).createOfficer(email, password);
     }
-    //end::testconfig[]
+
+   @Test
+   public void testCreateOfficerIfEmailIsInvalid() throws Exception {
+        String email = "wim.deblauwe";
+        String password = "my-super-secret-pwd";
+
+        CreateOfficerParameters parameters = new CreateOfficerParameters();
+        parameters.setEmail(email);
+        parameters.setPassword(password);
+
+        mvc.perform(post("/api/users")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(parameters)))
+                .andExpect(status().isBadRequest())
+                .andDo(print());
+
+        verify(service, never()).createOfficer(email, password);
+   }
 }

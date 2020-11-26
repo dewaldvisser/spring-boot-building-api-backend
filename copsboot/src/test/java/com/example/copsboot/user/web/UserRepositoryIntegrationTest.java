@@ -44,7 +44,7 @@ public class UserRepositoryIntegrationTest {
 
         assertThat(repository.count()).isEqualTo(1L);
 
-        entityManager.flush(); //<3>
+        entityManager.flush();
         assertThat(jdbcTemplate.queryForObject("SELECT count(*) FROM copsboot_user", Long.class)).isEqualTo(1L); //<4>
         assertThat(jdbcTemplate.queryForObject("SELECT count(*) FROM user_roles", Long.class)).isEqualTo(1L);
         assertThat(jdbcTemplate.queryForObject("SELECT roles FROM user_roles", String.class)).isEqualTo("OFFICER");

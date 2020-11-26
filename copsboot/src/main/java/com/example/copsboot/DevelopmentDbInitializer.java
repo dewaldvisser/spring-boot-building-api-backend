@@ -8,8 +8,8 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
-@Component //<1>
-@Profile(SpringProfiles.DEV) //<2>
+@Component
+@Profile(SpringProfiles.DEV)
 public class DevelopmentDbInitializer implements ApplicationRunner {
 
     private final UserService userService;
@@ -25,6 +25,6 @@ public class DevelopmentDbInitializer implements ApplicationRunner {
     }
 
     private void createTestUsers() {
-        userService.createOfficer("officer@example.com", "officer"); //<5>
+        userService.createOfficer("officer@example.com", "officer");
     }
 }

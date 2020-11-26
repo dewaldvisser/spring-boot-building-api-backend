@@ -25,11 +25,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-//tag::class-annotations[]
 @RunWith(SpringRunner.class)
 @CopsbootControllerTest(UserRestController.class)
 public class UserRestControllerTest {
-//end::class-annotations[]
     @Autowired
     private MockMvc mvc;
 
@@ -98,11 +96,10 @@ public class UserRestControllerTest {
         verify(service).createOfficer(email, password);
     }
 
-    //tag::pwdshort[]
     @Test
     public void testCreateOfficerIfPasswordIsTooShort() throws Exception {
         String email = "wim.deblauwe@example.com";
-        String password = "pwd"; // <1>
+        String password = "pwd";
 
         CreateOfficerParameters parameters = new CreateOfficerParameters();
         parameters.setEmail(email);
@@ -111,10 +108,9 @@ public class UserRestControllerTest {
         mvc.perform(post("/api/users")
                             .contentType(MediaType.APPLICATION_JSON_UTF8)
                             .content(objectMapper.writeValueAsString(parameters)))
-           .andExpect(status().isBadRequest()) //<2>
-           .andDo(print()); //<3>
+           .andExpect(status().isBadRequest())
+           .andDo(print());
 
-        verify(service, never()).createOfficer(email, password); //<4>
+        verify(service, never()).createOfficer(email, password);
     }
-    //end::pwdshort[]
 }

@@ -1,6 +1,5 @@
 package com.example.copsboot.infrastructure;
 
-import com.example.copsboot.infrastructure.SpringProfiles;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.core.annotation.AliasFor;
 import org.springframework.test.context.ActiveProfiles;
@@ -24,17 +23,15 @@ import java.lang.annotation.RetentionPolicy;
  * public class UserControllerTest {
  * </pre>
  */
-//tag::class[]
-@Retention(RetentionPolicy.RUNTIME) //<1>
-@WebMvcTest //<2>
-@ContextConfiguration(classes = CopsbootControllerTestConfiguration.class) //<3>
-@ActiveProfiles(SpringProfiles.TEST) //<4>
+@Retention(RetentionPolicy.RUNTIME)
+@WebMvcTest
+@ContextConfiguration(classes = CopsbootControllerTestConfiguration.class)
+@ActiveProfiles(SpringProfiles.TEST)
 public @interface CopsbootControllerTest {
 
-    @AliasFor(annotation = WebMvcTest.class, attribute = "value") //<5>
+    @AliasFor(annotation = WebMvcTest.class, attribute = "value")
     Class<?>[] value() default {};
 
-    @AliasFor(annotation = WebMvcTest.class, attribute = "controllers") //<6>
+    @AliasFor(annotation = WebMvcTest.class, attribute = "controllers")
     Class<?>[] controllers() default {};
 }
-//end::class[]
