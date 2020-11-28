@@ -130,7 +130,7 @@ public class UserRestControllerTest {
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
                 .content(objectMapper.writeValueAsString(parameters)))
                 .andExpect(status().isBadRequest())
-                .andDo(print());
+                .andExpect(jsonPath("errors[0].fieldName").value("password"));
 
         verify(service, never()).createOfficer(email, password);
     }
@@ -148,7 +148,7 @@ public class UserRestControllerTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(parameters)))
                 .andExpect(status().isBadRequest())
-                .andDo(print());
+                .andExpect(jsonPath("errors[0].fieldName").value("email"));
 
         verify(service, never()).createOfficer(email, password);
    }
