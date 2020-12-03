@@ -9,9 +9,13 @@ import java.time.ZonedDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@ValidCreateReportParameters
 public class CreateReportParameters {
     private ZonedDateTime dateTime;
 
     @ValidReportDescription
     private String description;
+
+    private boolean trafficIncident;
+    private int numberOfInvolvedCars;
 }

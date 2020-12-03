@@ -42,8 +42,11 @@ public class ReportRestControllerTest {
 
         String accessToken = obtainAccessToken(mvc, Users.OFFICER_EMAIL, Users.OFFICER_PASSWORD);
         ZonedDateTime dateTime = ZonedDateTime.parse("2018-04-11T22:59:03.189+02:00");
-        String description = "This is a test report description.";
-        CreateReportParameters parameters = new CreateReportParameters(dateTime, description);
+        String description = "The suspect is wearing a black hat.";
+        CreateReportParameters parameters = new CreateReportParameters(dateTime,
+                description,
+                false,
+                0);
         when(service.createReport(eq(Users.officer().getId()), any(ZonedDateTime.class), eq(description)))
                 .thenReturn(new Report(new ReportId(UUID.randomUUID()), Users.officer(), dateTime, description));
 
